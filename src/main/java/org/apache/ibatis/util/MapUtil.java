@@ -22,6 +22,8 @@ import java.util.function.Function;
 
 public class MapUtil {
   /**
+   * 如果 map 中有，则返回 value，否则 应用 mappingFunction
+   *
    * A temporary workaround for Java 8 specific performance issue JDK-8161372 .<br>
    * This class should be removed once we drop Java 8 support.
    *

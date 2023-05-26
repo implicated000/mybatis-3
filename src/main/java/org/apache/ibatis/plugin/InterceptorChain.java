@@ -27,9 +27,11 @@ public class InterceptorChain {
   private final List<Interceptor> interceptors = new ArrayList<>();
 
   public Object pluginAll(Object target) {
+      // 循环应用插件，加载顺序 1->2->3 ，执行顺序 3->2->1->x->1->2->3
     for (Interceptor interceptor : interceptors) {
       target = interceptor.plugin(target);
     }
+    // 返回最终代理对象
     return target;
   }
 
